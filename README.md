@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./public/metaforge.png" alt="MetaForge Logo" width="220" />
+  <img src="./public/metaforge-512.jpg" alt="MetaForge Logo" width="220" />
 </p>
 
 <p align="center">
