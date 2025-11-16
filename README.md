@@ -95,7 +95,7 @@ Both based on user inputs + selected colors.
 ### 1️⃣ Clone the repo
 
 ```bash
-git clone https://github.com/yourusername/metaforge.git
+git clone https://github.com/imshawan/metaforge.git
 cd metaforge
 
 npm install
