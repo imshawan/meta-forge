@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<p align="center">
+  <img src="./public/metaforge.png" alt="MetaForge Logo" width="220" />
+</p>
 
-## Getting Started
+<p align="center">
+  <strong>Modern Metadata, Manifest & Asset Generator for Next.js</strong>
+</p>
 
-First, run the development server:
+<p align="center">
+MetaForge is a powerful all-in-one tool for generating <b>Next.js metadata</b>, <b>site.webmanifest</b>, <b>favicon sets</b>, <b>PWA icons</b>, and <b>OG preview images</b> using a simple visual interface.
+Just upload a 512×512 base icon, choose your theme colors, fill metadata fields, and export! Perfect for <b>Next.js App Router</b> projects that need clean SEO, PWA assets, and consistent branding.
+</p>
+
+---
+
+## ✨ Features
+
+### 🖼️ Asset Generator  
+- Upload a **512×512** PNG / JPG / SVG  
+- Auto-generates all required icon sizes:
+  - 16×16  
+  - 32×32  
+  - 48×48  
+  - 64×64  
+  - 96×96  
+  - 128×128  
+  - 180×180  
+  - 192×192  
+  - 256×256  
+  - 384×384  
+  - 512×512  
+- Built-in **favicon preview**
+- Built-in **Open Graph preview**
+- Download:
+  - Individual icons  
+  - All icons at once  
+  - Favicon  
+  - OG image  
+
+### 🧾 Metadata Generator  
+Supports **every field in Next.js Metadata**, including:
+
+- `title`, templates, absolute titles  
+- `description`  
+- `applicationName`  
+- `authors`  
+- `keywords`, `generator`, `publisher`  
+- `robots` (string or object)  
+- `icons`  
+- `manifest`  
+- `alternates`  
+- `openGraph`  
+- `twitter`  
+- `appleWebApp`  
+- `formatDetection`  
+- `itunes`  
+- `verification`  
+- `appLinks`  
+- plus all other advanced or deprecated fields
+
+Outputs a **ready-to-paste TypeScript file** in full metadata format.
+
+### 🎨 Theme Controls  
+Users can pick:
+
+- **Primary UI color**  
+- **Accent color**  
+
+Used globally inside the OG generator, UI previews, and metadata builder.
+
+### ⚡ Instant Code Generation  
+- Generates:
+  - `metadata.ts`
+  - `site.webmanifest`
+
+Both based on user inputs + selected colors.
+
+
+---
+
+## 🛠️ Tech Stack
+
+- **Next.js**
+- **React**
+- **TypeScript**
+- **Tailwind CSS**
+- **Framer Motion**
+- **Lucide Icons**
+- Client-side canvas image rendering for generating icons & OG images
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Clone the repo
 
 ```bash
+git clone https://github.com/yourusername/metaforge.git
+cd metaforge
+
+npm install
+# or
+yarn install
+# or
+pnpm install
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
