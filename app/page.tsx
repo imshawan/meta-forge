@@ -1,65 +1,73 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { motion } from "framer-motion";
+import { Wand2, FileCode2 } from "lucide-react";
+import ToolTabs from "@app/components/ToolTabs";
+import AssetGenerator from "@app/components/AssetGenerator";
+import MetadataGenerator from "@app/components/MetadataGenerator";
+
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="mx-auto flex min-h-screen max-w-6xl flex-col px-4 pb-12 pt-12 sm:px-6 lg:px-8">
+      <motion.header
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+        className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"
+      >
+        <div>
+          <div className="inline-flex items-center gap-2 rounded-full border border-zinc-700/60 bg-zinc-900/70 px-3 py-1 text-xs uppercase tracking-wide text-zinc-300">
+            <span className="inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            Meta & PWA toolkit
+          </div>
+          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-zinc-50 sm:text-4xl">
+            MetaForge
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="mt-2 max-w-xl text-sm text-zinc-400 sm:text-base">
+            Generate pixel-perfect favicons and PWA icons, then craft a complete
+            Next.js <code className="rounded bg-zinc-900/80 px-1.5 py-0.5">metadata.ts</code> and{" "}
+            <code className="rounded bg-zinc-900/80 px-1.5 py-0.5">site.webmanifest</code> from one place.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.15, duration: 0.3 }}
+          className="flex items-center gap-3 rounded-2xl border border-zinc-800 bg-zinc-900/70 px-4 py-3 shadow-xl shadow-black/40"
+        >
+          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-sky-500">
+            <Wand2 className="h-5 w-5 text-black" />
+          </div>
+          <div className="text-xs text-zinc-300 sm:text-sm">
+            <div className="font-medium text-zinc-100">
+              2 tools, 1 workflow
+            </div>
+            <div className="text-zinc-400">
+              Assets first, then metadata & manifest.
+            </div>
+          </div>
+        </motion.div>
+      </motion.header>
+
+      <ToolTabs
+        tabs={[
+          {
+            id: "assets",
+            label: "1. Metadata Assets",
+            description: "Generate favicon & PWA icons from a 512×512 source.",
+            icon: <Wand2 className="h-4 w-4" />,
+            content: <AssetGenerator />,
+          },
+          {
+            id: "metadata",
+            label: "2. Metadata & Manifest",
+            description:
+              "Create a complete metadata.ts + site.webmanifest configuration.",
+            icon: <FileCode2 className="h-4 w-4" />,
+            content: <MetadataGenerator />,
+          },
+        ]}
+      />
     </div>
   );
 }
