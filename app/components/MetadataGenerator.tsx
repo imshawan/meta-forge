@@ -148,7 +148,7 @@ export default function MetadataGenerator() {
           onChange={(v) => update({ keywords: v })}
         />
 
-        <div className="grid gap-4 sm:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-3 mt-3">
           <Field
             label="Author name"
             value={values.authorName}

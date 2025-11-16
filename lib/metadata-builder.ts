@@ -37,7 +37,7 @@ export function buildMetadataTs(values: MetadataFormValues): string {
     slug,
   } = values;
 
-  const safeBaseUrl = baseUrl || "https://example.com";
+  const safeBaseUrl = baseUrl;
   const iconBase = `/icons/${slug}`;
 
   const ogImageUrl = ogImagePath
